@@ -1,0 +1,100 @@
+version: "3.8"
+
+services:
+  # ─── API Gateway ───────────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - api-service
+    networks:
+      - shieldai-network
+
+  # ─── API Service (TypeScript) ──────────────────────────
+  api-service:
+    build: ./api-service
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongodb:27017/shieldai
+      - REDIS_URL=redis://redis:6379
+      - AGENT_SERVICE_URL=http://agent-service:8001
+      - ML_SERVICE_URL=http://ml-service:8000
+      - JWT_SECRET=${JWT_SECRET}
+      - API_PORT=3000
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - shieldai-network
+    volumes:
+      - ./api-service:/app
+      - /app/node_modules
+
+  # ─── Agent Service (Python + LangChain) ────────────────
+  agent-service:
+    build: ./agent-service
+    ports:
+      - "8001:8001"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - AGENT_PORT=8001
+    networks:
+      - shieldai-network
+    volumes:
+      - ./agent-service:/app
+
+  # ─── ML Service (Python + PyTorch) ─────────────────────
+  ml-service:
+    build: ./ml-service
+    ports:
+      - "8000:8000"
+    networks:
+      - shieldai-network
+    volumes:
+      - ./ml-service:/app
+
+  # ─── MongoDB ───────────────────────────────────────────
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - shieldai-network
+
+  # ─── Redis ─────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - shieldai-network
+
+  # ─── ChromaDB ──────────────────────────────────────────
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8002:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    networks:
+      - shieldai-network
+
+# ─── Volumes ─────────────────────────────────────────────
+volumes:
+  mongodb_data:
+  redis_data:
+  chroma_data:
+
+# ─── Networks ────────────────────────────────────────────
+networks:
+  shieldai-network:
+    driver: bridge
