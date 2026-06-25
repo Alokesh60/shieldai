@@ -1,0 +1,283 @@
+{
+  "scam_patterns": [
+    {
+      "id": "SP001",
+      "type": "DIGITAL_ARREST",
+      "title": "CBI Digital Arrest Scam",
+      "description": "Fraudster impersonates CBI/ED/Customs officer and claims victim is involved in money laundering or drug trafficking",
+      "keywords": [
+        "CBI",
+        "ED",
+        "Customs",
+        "arrest",
+        "money laundering",
+        "drug trafficking",
+        "FIR",
+        "warrant",
+        "Aadhaar",
+        "video call",
+        "digital arrest",
+        "court order"
+      ],
+      "example_messages": [
+        "I am CBI officer. Your Aadhaar card is linked to money laundering. You will be arrested in 2 hours.",
+        "This is ED office. We have issued arrest warrant against you. Call immediately to avoid arrest.",
+        "Your parcel contains drugs. Customs department has filed FIR. Pay fine immediately to avoid arrest."
+      ],
+      "red_flags": [
+        "Government officer contacting via WhatsApp/Telegram",
+        "Asking to stay on video call for hours",
+        "Demanding immediate payment to avoid arrest",
+        "Asking to not tell family members",
+        "Threatening immediate arrest"
+      ],
+      "legal_reference": "IPC Section 419 (Cheating by personation) + IPC Section 420 (Cheating)",
+      "recommended_action": "Hang up immediately. Real CBI/ED never contacts via WhatsApp. Report to cybercrime.gov.in or call 1930.",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "SP002",
+      "type": "KYC_EXPIRY",
+      "title": "KYC Expiry Bank Scam",
+      "description": "Fraudster impersonates bank employee claiming KYC has expired and account will be blocked",
+      "keywords": [
+        "KYC",
+        "expired",
+        "bank account",
+        "blocked",
+        "update",
+        "OTP",
+        "Aadhaar",
+        "PAN card",
+        "bank",
+        "NEFT",
+        "RTGS",
+        "account suspended"
+      ],
+      "example_messages": [
+        "Your SBI KYC has expired. Your account will be blocked in 24 hours. Click link to update.",
+        "Dear customer, your HDFC bank KYC is pending. Send OTP to avoid account suspension.",
+        "Your bank account will be blocked. Update KYC immediately by sharing Aadhaar and PAN."
+      ],
+      "red_flags": [
+        "Asking for OTP over phone or message",
+        "Sending suspicious links for KYC update",
+        "Asking for Aadhaar and PAN number via message",
+        "Creating urgency with account blocking threat",
+        "Poor grammar and spelling in message"
+      ],
+      "legal_reference": "IPC Section 420 (Cheating) + IT Act Section 66C (Identity theft)",
+      "recommended_action": "Never share OTP. Visit bank branch directly for KYC. Report to cybercrime.gov.in.",
+      "severity": "HIGH"
+    },
+    {
+      "id": "SP003",
+      "type": "LOTTERY",
+      "title": "Lottery/Prize Scam",
+      "description": "Fraudster claims victim has won lottery or prize and asks for processing fee",
+      "keywords": [
+        "lottery",
+        "winner",
+        "prize",
+        "congratulations",
+        "selected",
+        "lucky draw",
+        "KBC",
+        "processing fee",
+        "claim",
+        "reward",
+        "cash prize",
+        "gift"
+      ],
+      "example_messages": [
+        "Congratulations! You have won Rs 25 lakh in KBC lottery. Pay processing fee of Rs 5000 to claim prize.",
+        "You are selected as lucky winner. Your prize is Rs 10 lakh. Send Rs 2000 registration fee.",
+        "Your mobile number won Rs 50 lakh in government lottery. Contact agent to claim prize."
+      ],
+      "red_flags": [
+        "Asking for upfront fee to claim prize",
+        "You never entered any lottery",
+        "Asking for bank details to transfer prize",
+        "Pressure to act quickly before prize expires",
+        "Too good to be true amount"
+      ],
+      "legal_reference": "IPC Section 420 (Cheating) + Prize Chits and Money Circulation Schemes Act",
+      "recommended_action": "Ignore and block. Legitimate lotteries never ask for upfront fees. Report to cybercrime.gov.in.",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "SP004",
+      "type": "UPI_FRAUD",
+      "title": "UPI Payment Fraud",
+      "description": "Fraudster sends fake UPI collect requests or tricks victim into paying instead of receiving money",
+      "keywords": [
+        "UPI",
+        "GPay",
+        "PhonePe",
+        "Paytm",
+        "BHIM",
+        "collect request",
+        "payment",
+        "transfer",
+        "scan QR",
+        "enter PIN",
+        "receive money"
+      ],
+      "example_messages": [
+        "I am buying your OLX item. I sent payment request on GPay. Please enter PIN to receive money.",
+        "Scan this QR code to receive your refund of Rs 5000 from Amazon.",
+        "Enter your UPI PIN to accept the payment I sent you."
+      ],
+      "red_flags": [
+        "Asking to enter UPI PIN to RECEIVE money (you never enter PIN to receive)",
+        "Sending collect requests instead of paying directly",
+        "QR code that asks for payment instead of showing payment",
+        "Buyer asking you to scan QR to receive OLX payment",
+        "Fake screenshots of payment made"
+      ],
+      "legal_reference": "IPC Section 420 (Cheating) + IT Act Section 66D (Cheating by impersonation using computer)",
+      "recommended_action": "You NEVER enter PIN to receive money. Reject all collect requests from unknown people. Report to cybercrime.gov.in.",
+      "severity": "HIGH"
+    },
+    {
+      "id": "SP005",
+      "type": "INVESTMENT",
+      "title": "Fake Investment/Trading Scam",
+      "description": "Fraudster lures victim into fake investment platform promising high returns",
+      "keywords": [
+        "investment",
+        "trading",
+        "returns",
+        "profit",
+        "stock market",
+        "crypto",
+        "SEBI",
+        "guaranteed returns",
+        "double money",
+        "WhatsApp group",
+        "tips",
+        "signals"
+      ],
+      "example_messages": [
+        "Join our WhatsApp group for guaranteed 30% monthly returns on stock market investment.",
+        "Our AI trading platform gives 500% returns. Invest Rs 10000 and get Rs 50000 in 30 days.",
+        "SEBI registered advisor here. I made Rs 5 lakh profit last month. Join my Telegram for free tips."
+      ],
+      "red_flags": [
+        "Guaranteed high returns (no investment guarantees returns)",
+        "Asking to install unknown trading app",
+        "WhatsApp/Telegram groups with fake profit screenshots",
+        "Pressure to invest more after initial small profit",
+        "Difficulty withdrawing money later"
+      ],
+      "legal_reference": "IPC Section 420 (Cheating) + SEBI Act violations + Banning of Unregulated Deposit Schemes Act",
+      "recommended_action": "Verify SEBI registration at sebi.gov.in. Never invest based on WhatsApp tips. Report to cybercrime.gov.in.",
+      "severity": "HIGH"
+    },
+    {
+      "id": "SP006",
+      "type": "ROMANCE",
+      "title": "Romance/Honey Trap Scam",
+      "description": "Fraudster builds fake romantic relationship online then asks for money",
+      "keywords": [
+        "love",
+        "relationship",
+        "army",
+        "foreign",
+        "visa",
+        "medical emergency",
+        "gift",
+        "customs",
+        "stranded",
+        "loan",
+        "help",
+        "trust"
+      ],
+      "example_messages": [
+        "I am US Army officer stationed in Syria. I want to send you gift but need customs fee of Rs 20000.",
+        "My dear, I am stuck at airport. My wallet stolen. Please send Rs 15000 I will return when I land.",
+        "I have feelings for you. I want to meet but need visa fees. Please help me Rs 50000."
+      ],
+      "red_flags": [
+        "Met only online, never in person",
+        "Claims to be foreign national or army officer",
+        "Asks for money after building emotional connection",
+        "Always has emergency requiring money",
+        "Refuses video call or always has excuse"
+      ],
+      "legal_reference": "IPC Section 420 (Cheating) + IPC Section 66A IT Act",
+      "recommended_action": "Never send money to someone you haven't met in person. Reverse image search their photo. Report to cybercrime.gov.in.",
+      "severity": "HIGH"
+    },
+    {
+      "id": "SP007",
+      "type": "DIGITAL_ARREST",
+      "title": "Fake Courier/Parcel Scam",
+      "description": "Fraudster calls claiming illegal items found in victim's parcel at customs",
+      "keywords": [
+        "parcel",
+        "courier",
+        "FedEx",
+        "DHL",
+        "customs",
+        "illegal",
+        "drugs",
+        "passport",
+        "arrested",
+        "NDPS",
+        "narcotics",
+        "package",
+        "delivery"
+      ],
+      "example_messages": [
+        "Your FedEx parcel contains fake passport and drugs. Customs officer will arrest you. Call immediately.",
+        "A parcel in your name has illegal items. Pay Rs 50000 to avoid police case.",
+        "DHL courier has been stopped. Your package has narcotics. Settle case in Rs 30000."
+      ],
+      "red_flags": [
+        "Customs never calls about illegal items — they arrest directly",
+        "Asking for money to settle case over phone",
+        "Creating extreme fear and urgency",
+        "Asking to keep conversation secret from family",
+        "Multiple officers joining call to seem legitimate"
+      ],
+      "legal_reference": "IPC Section 419 + IPC Section 420 + NDPS Act impersonation",
+      "recommended_action": "Real customs never asks for money over phone. Hang up immediately. Call 1930 to report.",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "SP008",
+      "type": "KYC_EXPIRY",
+      "title": "Fake Tech Support Scam",
+      "description": "Fraudster impersonates Microsoft/Google/telecom support claiming device is hacked",
+      "keywords": [
+        "Microsoft",
+        "Google",
+        "Apple",
+        "hacked",
+        "virus",
+        "remote access",
+        "AnyDesk",
+        "TeamViewer",
+        "technical support",
+        "blocked",
+        "suspicious activity"
+      ],
+      "example_messages": [
+        "Your Windows license has expired. Call Microsoft support immediately to avoid data loss.",
+        "Google detected suspicious activity on your account. Install AnyDesk for our engineer to fix.",
+        "Your Jio SIM shows illegal activity. Share OTP to verify identity and avoid disconnection."
+      ],
+      "red_flags": [
+        "Microsoft/Google never calls you unsolicited",
+        "Asking to install remote access software (AnyDesk, TeamViewer)",
+        "Once they have remote access they can steal everything",
+        "Asking for payment for fake software license",
+        "Creating urgency about immediate data loss"
+      ],
+      "legal_reference": "IPC Section 420 + IT Act Section 66 (Computer related offences)",
+      "recommended_action": "Never install remote access software for unknown callers. Real tech companies never call unsolicited. Report to cybercrime.gov.in.",
+      "severity": "HIGH"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# ─── Web Framework ──────────────────────────────────────────
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.4.2
+python-dotenv==1.0.0
+
+# ─── LangChain Core ─────────────────────────────────────────
+langchain==0.0.335
+langchain-google-genai==0.0.6
+langchain-community==0.0.6
+
+# ─── Vector Database ────────────────────────────────────────
+chromadb==0.4.18
+
+# ─── Google Gemini ──────────────────────────────────────────
+google-generativeai==0.3.1
+
+# ─── Embeddings (replaces sentence-transformers) ────────────
+torch==2.1.0
+transformers==4.35.2
+
+# ─── HTTP Client ────────────────────────────────────────────
+httpx==0.25.1
+requests==2.31.0
+
+# ─── Utilities ──────────────────────────────────────────────
+python-multipart==0.0.6
+# uuid is built into Python 3 — no need to install separately
